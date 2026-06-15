@@ -1,5 +1,29 @@
 apiVersion: v1
 entries:
+  base:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2026-06-15T04:46:43.843572383Z"
+    description: A base helm chart which will be used by different helm charts
+    digest: f035464bc6ddeb097eaf2c9b8782d81d96dc6b0380426f5df6f7bd63c27733fc
+    home: https://github.com/ot-container-kit/helm-charts
+    icon: https://raw.githubusercontent.com/OT-CONTAINER-KIT/helm-charts/main/static/helm-chart-logo.svg
+    keywords:
+    - deployment
+    - base
+    - opstree
+    - kubernetes
+    - openshift
+    maintainers:
+    - email: abhishek.dubey@opstree.com
+      name: iamabhishek-dubey
+      url: https://github.com/iamabhishek-dubey
+    name: base
+    sources:
+    - https://github.com/ot-container-kit/helm-charts
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/base-0.1.0/base-0.1.0.tgz
+    version: 0.1.0
   elasticsearch:
   - apiVersion: v1
     appVersion: 0.4.0
@@ -121,6 +145,26 @@ entries:
     urls:
     - https://github.com/OT-CONTAINER-KIT/helm-charts/releases/download/elasticsearch-0.3.0/elasticsearch-0.3.0.tgz
     version: 0.3.0
+  fluent-bit:
+  - apiVersion: v2
+    appVersion: 5.0.3
+    created: "2026-06-15T04:46:43.974953317Z"
+    dependencies:
+    - name: fluent-bit
+      repository: https://fluent.github.io/helm-charts
+      version: 0.57.3
+    description: A Helm chart for fluent-bit
+    digest: 787f807ae13b64f0d2d6cad53db3871a41b0cf23892c07457905d0d8c1744949
+    maintainers:
+    - email: ashwani.singh@opstree.com
+      name: ashwani-opstree
+    - email: varun.kumar@opstree.com
+      name: Varunarora2201
+    name: fluent-bit
+    type: application
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/fluent-bit-0.0.3/fluent-bit-0.0.3.tgz
+    version: 0.0.3
   fluentd:
   - apiVersion: v1
     appVersion: 0.4.0
@@ -218,6 +262,27 @@ entries:
     urls:
     - https://github.com/OT-CONTAINER-KIT/helm-charts/releases/download/fluentd-0.3.0/fluentd-0.3.0.tgz
     version: 0.3.0
+  ingress-management:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2026-06-15T04:46:44.115246362Z"
+    description: A Helm chart to manage Ingress traffic
+    digest: d91ef2e24a6e9b88f22b69906071e6ecd8bba1b7e2636c3a0066326433a9c1a7
+    home: https://github.com/ot-container-kit/helm-charts
+    icon: https://raw.githubusercontent.com/OT-CONTAINER-KIT/helm-charts/main/static/helm-chart-logo.svg
+    keywords:
+    - ingress
+    - kong
+    - httpRoute
+    - kubernetes
+    maintainers:
+    - name: sharvarikhamkar1304
+    name: ingress-management
+    sources:
+    - https://github.com/ot-container-kit/helm-charts
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/ingress-management-0.1.0/ingress-management-0.1.0.tgz
+    version: 0.1.0
   k8s-vault-webhook:
   - apiVersion: v1
     created: "2021-05-08T12:42:35.711946529Z"
@@ -465,7 +530,43 @@ entries:
     urls:
     - https://github.com/OT-CONTAINER-KIT/helm-charts/releases/download/logging-operator-0.3.0/logging-operator-0.3.0.tgz
     version: 0.3.0
+  loki-standalone:
+  - apiVersion: v2
+    appVersion: "3.6"
+    created: "2026-06-15T04:46:44.299628505Z"
+    dependencies:
+    - alias: standalone
+      name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: 6.38.0
+    description: A Helm chart for Loki standalone setup
+    digest: 6ef30fafd95f4704366c3acb525d344f4424e3df16f3e068f47c15a66103426e
+    maintainers:
+    - email: ashwani.singh@opstree.com
+      name: ashwani-opstree
+    - email: varun.kumar@opstree.com
+      name: Varunarora2201
+    name: loki-standalone
+    type: application
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/loki-standalone-1.0.2/loki-standalone-1.0.2.tgz
+    version: 1.0.2
   microservice:
+  - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2026-06-15T04:46:44.439121006Z"
+    description: Basic helm chart for deploying microservices on kubernetes with best
+      practices
+    digest: 3cac88dc5e42bff5ae16e537d19acf34154dd55aa1c5951c8ca412d9a3343e70
+    maintainers:
+    - name: ashwani-opstree
+    - name: tripathishikha1
+    - name: khushimalhoz
+    name: microservice
+    type: application
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/microservice-0.1.8/microservice-0.1.8.tgz
+    version: 0.1.8
   - apiVersion: v2
     appVersion: "1.0"
     created: "2024-01-30T05:48:59.320159827Z"
@@ -762,6 +863,133 @@ entries:
     urls:
     - https://github.com/OT-CONTAINER-KIT/helm-charts/releases/download/mysql-0.1.0/mysql-0.1.0.tgz
     version: 0.1.0
+  ot-karpenter:
+  - apiVersion: v2
+    created: "2026-06-15T04:46:44.563801054Z"
+    dependencies:
+    - name: karpenter
+      repository: oci://public.ecr.aws/karpenter
+      version: 1.1.1
+    digest: 7ed7e2ed090db16f843fc805a08ecdcd8ac24249294edc60e443da947e9f735c
+    maintainers:
+    - name: opstree
+    name: ot-karpenter
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/ot-karpenter-0.3.0/ot-karpenter-0.3.0.tgz
+    version: 0.3.0
+  otel-operator:
+  - apiVersion: v2
+    appVersion: 0.149.0
+    created: "2026-06-15T04:46:44.722353231Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: opentelemetry-operator
+      repository: https://open-telemetry.github.io/opentelemetry-helm-charts/
+      tags:
+      - operator
+      version: 0.111.0
+    description: A Helm chart for Opentelemetry Operator
+    digest: 9f99e2ec772ce41d00910bdb38255b8aab2b6ac6b45f4e22699da8e65fc78a14
+    maintainers:
+    - email: ashwani.singh@opstree.com
+      name: ashwani-opstree
+    - email: varun.kumar@opstree.com
+      name: Varunarora2201
+    name: otel-operator
+    type: application
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/otel-operator-1.0.1/otel-operator-1.0.1.tgz
+    version: 1.0.1
+  pga:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2026-06-15T04:46:44.982022254Z"
+    dependencies:
+    - alias: app
+      condition: app.enabled
+      name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts/
+      tags:
+      - monitoring
+      version: 61.3.1
+    - alias: kube
+      condition: kube.enabled
+      name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts/
+      tags:
+      - monitoring
+      version: 61.3.1
+    - alias: adapter
+      condition: adapter.enabled
+      name: prometheus-adapter
+      repository: https://prometheus-community.github.io/helm-charts/
+      tags:
+      - monitoring
+      version: 4.10.0
+    - alias: pushgateway
+      condition: pushgateway.enabled
+      name: prometheus-pushgateway
+      repository: https://prometheus-community.github.io/helm-charts/
+      tags:
+      - monitoring
+      version: 2.14.0
+    - alias: blackbox
+      condition: blackbox.enabled
+      name: prometheus-blackbox-exporter
+      repository: https://prometheus-community.github.io/helm-charts/
+      tags:
+      - blackbox
+      version: 8.17.0
+    - alias: thanos
+      condition: thanos.enabled
+      name: thanos
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - thanos
+      version: 15.7.12
+    - alias: k8s-events
+      condition: k8s-events.enabled
+      name: kubernetes-event-exporter
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - monitoring
+      version: 3.2.10
+    description: A Helm chart for prometheus, grafana and alertmanager
+    digest: b53ab39f9170af96fae5bdbad7231c6486391ee92decd9cf722c33dd80d31970
+    maintainers:
+    - name: ashwani-opstree
+    name: pga
+    type: application
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/pga-1.0.3/pga-1.0.3.tgz
+    version: 1.0.3
+  psmdb-operator-db:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-06-15T04:46:45.11770515Z"
+    dependencies:
+    - alias: psmdb-operator
+      condition: psmdb-operator.enabled
+      name: psmdb-operator
+      repository: https://percona.github.io/percona-helm-charts/
+      tags:
+      - psmdb-operator
+      version: 1.18.0
+    - alias: psmdb-db
+      condition: psmdb-db.enabled
+      name: psmdb-db
+      repository: https://percona.github.io/percona-helm-charts/
+      tags:
+      - psmdb-db
+      version: 1.18.0
+    description: A Helm chart for Percona Operator and Percona Server for MongoDB
+    digest: 4ac99d4f9fa4ae69208320ed1a0b11bcff78966e9dd7e7405015718c435f3511
+    name: psmdb-operator-db
+    type: application
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/psmdb-operator-db-1.0.0/psmdb-operator-db-1.0.0.tgz
+    version: 1.0.0
   redis:
   - apiVersion: v2
     appVersion: 0.16.0
@@ -3003,4 +3231,115 @@ entries:
     urls:
     - https://github.com/OT-CONTAINER-KIT/helm-charts/releases/download/redis-setup-0.5.0/redis-setup-0.5.0.tgz
     version: 0.5.0
-generated: "2024-05-30T14:38:39.08798191Z"
+  tempo-standalone:
+  - apiVersion: v2
+    appVersion: 2.10.4
+    created: "2026-06-15T04:46:45.252218937Z"
+    dependencies:
+    - alias: tempo
+      condition: tempo.enabled
+      name: tempo
+      repository: https://grafana.github.io/helm-charts
+      version: 1.23.0
+    description: A Helm chart for Tempo Standalone setup
+    digest: a0ef11a58422ae564e816697ff90cb75ed5d2a417a985ecb97e0a1bbdff5fbe1
+    maintainers:
+    - email: ashwani.singh@opstree.com
+      name: ashwani-opstree
+    - email: varun.kumar@opstree.com
+      name: Varunarora2201
+    name: tempo-standalone
+    type: application
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/tempo-standalone-1.0.1/tempo-standalone-1.0.1.tgz
+    version: 1.0.1
+  vm-standalone:
+  - apiVersion: v2
+    appVersion: 0.69.0
+    created: "2026-06-15T04:46:45.445927979Z"
+    dependencies:
+    - alias: vm
+      condition: vm.enabled
+      name: victoria-metrics-k8s-stack
+      repository: https://victoriametrics.github.io/helm-charts/
+      version: 0.75.0
+    - alias: prometheus-operator-crds
+      condition: prometheus-operator-crds.enabled
+      name: prometheus-operator-crds
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 20.0.1
+    description: A Helm chart for Victoria Metrics K8s stack standalone setup
+    digest: cda903dbc1242e427ec78a8d5cb22d3b52d8931638c37d040e607f9a597d5120
+    maintainers:
+    - email: ashwani.singh@opstree.com
+      name: ashwani-opstree
+    - email: varun.kumar@opstree.com
+      name: Varunarora2201
+    name: vm-standalone
+    type: application
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/vm-standalone-0.0.4/vm-standalone-0.0.4.tgz
+    version: 0.0.4
+  web:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-06-15T04:46:45.562273109Z"
+    dependencies:
+    - name: base
+      repository: https://ot-container-kit.github.io/helm-charts
+      version: 0.1.0
+    description: A deployment helm chart which will be used to deploy any type of
+      stateless application
+    digest: 690c8a6f3cd8fb8e3e11040ad325260bb91c05b03b4dabc7f0b3a6876519cba2
+    home: https://github.com/ot-container-kit/helm-charts
+    icon: https://raw.githubusercontent.com/OT-CONTAINER-KIT/helm-charts/main/static/helm-chart-logo.svg
+    keywords:
+    - deployment
+    - base
+    - opstree
+    - kubernetes
+    - openshift
+    - microservice
+    - stateless
+    maintainers:
+    - email: abhishek.dubey@opstree.com
+      name: iamabhishek-dubey
+      url: https://github.com/iamabhishek-dubey
+    name: web
+    sources:
+    - https://github.com/ot-container-kit/helm-charts
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/web-0.1.0/web-0.1.0.tgz
+    version: 0.1.0
+  worker:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-06-15T04:46:45.687738827Z"
+    dependencies:
+    - name: base
+      repository: https://ot-container-kit.github.io/helm-charts
+      version: 0.1.0
+    description: A deployment helm chart which will be used to deploy any type of
+      stateless application
+    digest: 1a5ece6533d55e5bdf07322ec2ef29c5870d8c31ec903e87bf6b5cbf6f73a27b
+    home: https://github.com/ot-container-kit/helm-charts
+    icon: https://raw.githubusercontent.com/OT-CONTAINER-KIT/helm-charts/main/static/helm-chart-logo.svg
+    keywords:
+    - deployment
+    - base
+    - opstree
+    - kubernetes
+    - openshift
+    - microservice
+    - stateless
+    maintainers:
+    - email: abhishek.dubey@opstree.com
+      name: iamabhishek-dubey
+      url: https://github.com/iamabhishek-dubey
+    name: worker
+    sources:
+    - https://github.com/ot-container-kit/helm-charts
+    urls:
+    - https://github.com/drivebyer/helm-charts/releases/download/worker-0.1.0/worker-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-06-15T04:46:45.687968271Z"
